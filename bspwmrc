@@ -1,0 +1,56 @@
+#!/bin/sh
+
+wmname LG3D &
+
+vmware-user-suid-wrapper &
+
+~/.config/polybar/launch.sh &
+
+picom --experimental-backends &
+
+xsetroot -cursor_name left_ptr &
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+killall mate-notification-daemon; dunst &
+
+feh --bg-fill /home/your-username/Pictures/octopus.png &
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
+bspc config pointer_modifier mod1
+bspc config focus_follows_pointer true
+
+bspc wm -O Virtual1 Virtual2
+
+bspc monitor Virtual1 -d I II III IV V
+bspc monitor Virtual2 -d VI VII VIII IX X
+
+bspc config border_width         0
+bspc config window_gap           12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
+bspc rule -a burp-StartBurp desktop='^2' state=floating
+bspc rule -a "burp-StartBurp:*:Burp Suite Community Edition v2023.1.2 - Temporary Project" state=tiled
+
+bspc rule -a discord desktop='^10'
+
+bspc rule -a firefox desktop='^7'
+
+bspc rule -a ghidra-Ghidra desktop='^2'
+bspc rule -a "ghidra-Ghidra:*:Ghidra: NO ACTIVE PROJECT" state=tiled
+
+bspc rule -a Google-chrome monitor='^2'
+
+bspc rule -a jetbrains-pycharm-ce desktop='^1' state=floating
+bspc rule -a "jetbrains-pycharm-ce:*:Welcome to PyCharm" state=tiled
+bspc rule -a "jetbrains-pycharm-ce:*:pythonProject – main.py" state=tiled
+
+bspc rule -a Nm-connection-editor monitor='^1' state=floating
+
+bspc rule -a xfreerdp desktop='^1' state=tiled
