@@ -1,10 +1,17 @@
 <h1 align="center">ArcticTones</h1>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MateoNitro550/ArcticTones/main/assets/ArcticTones.png">
+  <img src="./assets/ArcticTones.png">
 </p>
 
 ArcticTones is a minimalist Linux setup for Parrot Security Edition. It features an arctic, north-bluish color palette that provides a clean and modern look to your desktop environment. Powered by bspwm, ArcticTones offers an efficient and customizable workflow. It's a perfect choice for those seeking a streamlined and visually appealing Linux setup that combines style and functionality.
+
+## Table of Contents
+
+* [Dependencies](#dependencies)
+* [Installation Steps](#installation-steps-parrot-security-edition---53-electro-ara)
+* [Configuration Files](#configuration-files)
+* [Usage and Shortcuts](#usage-and-shortcuts)
 
 ## Dependencies
 
@@ -123,7 +130,7 @@ Open a terminal window and right-click within it. Then, select "__Profiles__" fr
 In the "__General__" tab, uncheck the "__Use the system fixed width font__" box and modify the font to "__Hack NF Regular__." Uncheck the "__Show menubar by default in new terminals__" box to declutter the interface. Change the cursor shape to "__I-Beam__" for better visibility and precision. You may also choose to disable the "__Terminal bell__" if you find audible alerts distracting.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MateoNitro550/ArcticTones/main/assets/Profile%20Preferences%20-%20General.png">
+  <img src="./assets/Profile Preferences - General.png">
 </p>
 
 Under the "__Colors__" tab, modify the "__Text color__" to #FFFFFF for a white text appearance. Update the color palette as follows, starting from the first row, left to right:
@@ -149,13 +156,13 @@ For the second row, from left to right:
 * #EEEEEC
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MateoNitro550/ArcticTones/main/assets/Profile%20Preferences%20-%20Colors.png">
+  <img src="./assets/Profile Preferences - Colors.png">
 </p>
 
 Under the "__Scrolling__" tab, set the "__Scrollbar__" option to "__Disabled__."
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MateoNitro550/ArcticTones/main/assets/Profile%20Preferences%20-%20Scrolling.png">
+  <img src="./assets/Profile Preferences - Scrolling.png">
 </p>
 
 8. Polybar
@@ -184,7 +191,7 @@ sudo usermod --shell /usr/bin/zsh your-username
 sudo usermod --shell /usr/bin/zsh root
 ```
 
-Replace ``your-username`` with your actual username, as this command modifies the default shell used by the specified user to zsh.
+Replace ``your-username`` with your actual username.
 
 ```
 mv /opt/ArcticTones/zshrc ~/.zshrc
@@ -363,7 +370,7 @@ kill -9 -1
 Once you reach the login screen, you will notice a white dot representing the available desktop environments. Click on the white dot and select __bspwm__ from the list of available environments.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MateoNitro550/ArcticTones/main/assets/Migrating%20to%20bspwm.png">
+  <img src="./assets/Migrating to bspwm.png">
 </p>
 
 After logging back in, don't panic if you see a black screen. This is expected behavior. In the [next section](https://github.com/MateoNitro550/ArcticTones#configuration-files), we will modify a configuration file to set up a wallpaper and customize the appearance of the desktop. 
