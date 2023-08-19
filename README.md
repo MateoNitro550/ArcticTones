@@ -116,9 +116,12 @@ mv /opt/ArcticTones/picom.conf ~/.config/picom
 
 6. Nerd Fonts && Feather
 
+Download __Hack Nerd Font__ and __JetBrainsMono Nerd Font__ ZIP files from the [Nerd Fonts website](https://www.nerdfonts.com/font-downloads) and save them to your computer.
+
 ```
-sudo unzip /opt/ArcticTones/Hack.zip -d /usr/local/share/fonts
-rm -rf /opt/ArcticTones/Hack.zip
+sudo unzip Hack.zip -d /usr/local/share/fonts
+sudo unzip JetBrainsMono.zip -d /usr/local/share/fonts
+rm Hack.zip JetBrainsMono.zip
 sudo mv /opt/ArcticTones/feather.ttf /usr/local/share/fonts
 fc-cache -v
 ```
@@ -135,25 +138,26 @@ In the "__General__" tab, uncheck the "__Use the system fixed width font__" box 
 
 Under the "__Colors__" tab, modify the "__Text color__" to #FFFFFF for a white text appearance. Update the color palette as follows, starting from the first row, left to right:
 
-* #2E3436
-* #CC0000
-* #88C0D0
-* #C4A000
-* #3465A4
-* #75507B
-* #06989A
-* #D3D7CF
+* <span style="color:#2E3436">#2E3436</span>
+* <span style="color:#CC0000">#CC0000</span>
+* <span style="color:#88C0D0">#88C0D0</span>
+* <span style="color:#C4A000">#C4A000</span>
+* <span style="color:#3465A4">#3465A4</span>
+* <span style="color:#75507B">#75507B</span>
+* <span style="color:#06989A">#06989A</span>
+* <span style="color:#D3D7CF">#D3D7CF</span>
+
 
 For the second row, from left to right:
 
-* #2E3440
-* #EF2929
-* #88C0D0
-* #FCE94F
-* #729FCF
-* #AD7FA8
-* #34E2E2
-* #EEEEEC
+* <span style="color:#2E3440">#2E3440</span>
+* <span style="color:#EF2929">#EF2929</span>
+* <span style="color:#88C0D0">#88C0D0</span>
+* <span style="color:#FCE94F">#FCE94F</span>
+* <span style="color:#729FCF">#729FCF</span>
+* <span style="color:#AD7FA8">#AD7FA8</span>
+* <span style="color:#34E2E2">#34E2E2</span>
+* <span style="color:#EEEEEC">#EEEEEC</span>
 
 <p align="center">
   <img src="./assets/Profile Preferences - Colors.png">
@@ -178,7 +182,7 @@ cd build
 cmake ..
 make -j$(nproc)
 sudo make install
-rm -rf ~/.config/polybar
+rm -r ~/.config/polybar
 mv /opt/ArcticTones/polybar ~/.config
 chmod -R u+x ~/.config/polybar/modules/*.sh
 ```
@@ -225,7 +229,7 @@ sudo git clone -n --depth=1 --filter=tree:0 https://github.com/ohmyzsh/ohmyzsh /
 cd /usr/share/zsh-sudo
 sudo git sparse-checkout set --no-cone plugins/sudo
 sudo git checkout
-sudo mv plugins/sudo/* .; sudo rm -rf plugins
+sudo mv plugins/sudo/* .; sudo rm -r plugins
 ```
 
 zsh-syntax-highlighting 
@@ -290,13 +294,23 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
 When prompted with the message "__Do you want to install example custom config?__", type "__y__" and press Enter to install the example custom config. Wait for the installation to complete, and then you can start using __NvChad__ with __Neovim__.
 
+To set the Nord theme in NvChad, follow these steps:
+
+1. Open __Neovim__ by typing vim in the terminal.
+
+2. Press <Space> and then th.
+
+3. Type nord and press Enter to apply the Nord theme.
+
+If you're interested, you can also explore and select from the available themes to further customize your __Neovim__ experience.
+
 15. Bat
 
 Download the [latest release](https://github.com/sharkdp/bat/releases) of __Bat__ by visiting their GitHub repository. Look for the appropriate __bat\_...\_amd64.deb__ file and download it to your computer.
 
 ```
 sudo dpkg -i bat_..._amd64.deb
-rm -rf bat_..._amd64.deb
+rm bat_..._amd64.deb
 mkdir -p ~/.config/bat
 echo '--theme="Nord"' > ~/.config/bat/config
 ```
@@ -307,7 +321,7 @@ Download the [latest release](https://github.com/lsd-rs/lsd/releases) of __LSD__
 
 ```
 sudo dpkg -i lsd_..._amd64.deb
-rm -rf lsd_..._amd64.deb
+rm lsd_..._amd64.deb
 ```
 
 17. fzf
@@ -343,7 +357,6 @@ cd /opt
 sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
 git clone https://github.com/Raymo111/i3lock-color.git
 ./i3lock-color/install-i3lock-color.sh
-cd /opt
 rm -rf i3lock-color
 ```
 
@@ -359,6 +372,7 @@ git clone https://github.com/xero/glitchlock
 ```
 rm -rf /opt/ArcticTones
 ```
+
 21. Migrating to bspwm
 
 Now it's time to migrate to __bspwm__. To do this, we first need to log out of our current session. You can log out manually from the menu or by using the following command in the terminal:
