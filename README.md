@@ -4,12 +4,16 @@
   <img src="./assets/ArcticTones.png">
 </p>
 
-ArcticTones is a minimalist Linux setup for Parrot Security Edition. It features an arctic, north-bluish color palette that provides a clean and modern look to your desktop environment. Powered by bspwm, ArcticTones offers an efficient and customizable workflow. It's a perfect choice for those seeking a streamlined and visually appealing Linux setup that combines style and functionality.
+<p align="center">
+  <img src="./assets/Preview.png">
+</p>
+
+ArcticTones is a minimalist Linux setup for Kali Linux. It features an arctic, north-bluish color palette that provides a clean and modern look to your desktop environment. Powered by bspwm, ArcticTones offers an efficient and customizable workflow. It's a perfect choice for those seeking a streamlined and visually appealing Linux setup that combines style and functionality.
 
 ## Table of Contents
 
 * [Dependencies](#dependencies)
-* [Installation Steps](#installation-steps-parrot-security-edition---53-electro-ara)
+* [Installation Steps](#installation-steps-kali-linux---2023.4)
 * [Configuration Files](#configuration-files)
 * [Usage and Shortcuts](#usage-and-shortcuts)
 
@@ -18,9 +22,11 @@ ArcticTones is a minimalist Linux setup for Parrot Security Edition. It features
 * [bspwm](https://github.com/baskerville/bspwm)
 * [sxhkd](https://github.com/baskerville/sxhkd)
 * [feh](https://github.com/derf/feh)
+* [kitty](https://github.com/kovidgoyal/kitty)
 * [picom](https://github.com/ibhagwan/picom)
 * [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
 * [Feather](https://github.com/feathericons/feather)
+* [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 * [Polybar](https://github.com/polybar/polybar)
 * [zsh](https://www.zsh.org/)
 * [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
@@ -35,16 +41,15 @@ ArcticTones is a minimalist Linux setup for Parrot Security Edition. It features
 * [Bat](https://github.com/sharkdp/bat)
 * [LSD](https://github.com/Peltoche/lsd)
 * [fzf](https://github.com/junegunn/fzf)
-* [ranger](https://github.com/ranger/ranger)
 * [glitchlock](https://github.com/xero/glitchlock)
 
-## Installation Steps (Parrot Security Edition - 5.3 Electro Ara)
+## Installation Steps (Kali Linux - 2023.4)
 
 __NOTE:__ The installation steps in this guide assume the use of the ``/opt`` directory as the installation location. By default, the ownership of files and directories in ``/opt`` is set to __root__. If you prefer to have ownership of the files as your user account, you have a few options: 
 
 * __Custom Location:__ You can choose any other location where you have full access and control over the files and directories. Simply adjust the commands and paths accordingly to match your chosen location.
 
-* __Individual File Ownership:__ After cloning each repository, you can change the ownership of the files individually. Use the following command as an example to change the ownership of a file or directory:
+* __Individual File Ownership:__ After cloning the repository, you can change the ownership of the files individually. Use the following command as an example to change the ownership of a file or directory:
 
 ```
 sudo chown -R your-username:your-username /path/to/file-or-directory
@@ -67,7 +72,7 @@ Choose the option that best suits your preference, and adjust the ownership acco
 1. Configuration Files
 
 ```
-sudo parrot-upgrade
+sudo apt update && sudo apt upgrade
 cd /opt
 git clone https://github.com/MateoNitro550/ArcticTones
 ```
@@ -99,7 +104,14 @@ sudo apt install feh
 mv /opt/ArcticTones/octopus.png ~/Pictures
 ```
 
-5. picom
+5. kitty
+
+```
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+mv /opt/ArcticTones/kitty ~/.config
+```
+
+6. picom
 
 ```
 cd /opt
@@ -114,7 +126,7 @@ mkdir -p ~/.config/picom
 mv /opt/ArcticTones/picom.conf ~/.config/picom
 ```
 
-6. Nerd Fonts && Feather
+7. Nerd Fonts && Feather
 
 Download __Hack Nerd Font__ and __JetBrainsMono Nerd Font__ ZIP files from the [Nerd Fonts website](https://www.nerdfonts.com/font-downloads) and save them to your computer.
 
@@ -126,50 +138,17 @@ sudo mv /opt/ArcticTones/feather.ttf /usr/local/share/fonts
 fc-cache -v
 ```
 
-7. Terminal
+8. Papirus
 
-Open a terminal window and right-click within it. Then, select "__Profiles__" from the context menu and choose "__Profile Preferences__."
+```
+sudo git clone -n --depth=1 --filter=tree:0 https://github.com/PapirusDevelopmentTeam/papirus-icon-theme /usr/share/icons/Papirus
+cd /usr/share/icons/Papirus
+sudo git sparse-checkout set --no-cone Papirus/32x32
+sudo git checkout
+sudo mv Papirus/32x32/* .; sudo rm -r Papirus
+```
 
-In the "__General__" tab, uncheck the "__Use the system fixed width font__" box and modify the font to "__Hack NF Regular__." Uncheck the "__Show menubar by default in new terminals__" box to declutter the interface. Change the cursor shape to "__I-Beam__" for better visibility and precision. You may also choose to disable the "__Terminal bell__" if you find audible alerts distracting.
-
-<p align="center">
-  <img src="./assets/Profile Preferences - General.png">
-</p>
-
-Under the "__Colors__" tab, modify the "__Text color__" to #FFFFFF for a white text appearance. Update the color palette as follows, starting from the first row, left to right:
-
-* <span style="color:#2E3436">#2E3436</span>
-* <span style="color:#CC0000">#CC0000</span>
-* <span style="color:#88C0D0">#88C0D0</span>
-* <span style="color:#C4A000">#C4A000</span>
-* <span style="color:#3465A4">#3465A4</span>
-* <span style="color:#75507B">#75507B</span>
-* <span style="color:#06989A">#06989A</span>
-* <span style="color:#D3D7CF">#D3D7CF</span>
-
-
-For the second row, from left to right:
-
-* <span style="color:#2E3440">#2E3440</span>
-* <span style="color:#EF2929">#EF2929</span>
-* <span style="color:#88C0D0">#88C0D0</span>
-* <span style="color:#FCE94F">#FCE94F</span>
-* <span style="color:#729FCF">#729FCF</span>
-* <span style="color:#AD7FA8">#AD7FA8</span>
-* <span style="color:#34E2E2">#34E2E2</span>
-* <span style="color:#EEEEEC">#EEEEEC</span>
-
-<p align="center">
-  <img src="./assets/Profile Preferences - Colors.png">
-</p>
-
-Under the "__Scrolling__" tab, set the "__Scrollbar__" option to "__Disabled__."
-
-<p align="center">
-  <img src="./assets/Profile Preferences - Scrolling.png">
-</p>
-
-8. Polybar
+9. Polybar
 
 ```
 sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
@@ -184,10 +163,10 @@ make -j$(nproc)
 sudo make install
 rm -r ~/.config/polybar
 mv /opt/ArcticTones/polybar ~/.config
-chmod -R u+x ~/.config/polybar/modules/*.sh
+find ~/.config/polybar/modules -type f -name '*.sh' -exec chmod u+x {} \;
 ```
 
-9. zsh
+10. zsh
 
 ```
 sudo apt install zsh
@@ -202,7 +181,7 @@ mv /opt/ArcticTones/zshrc ~/.zshrc
 sudo ln -sf ~/.zshrc /root/.zshrc
 ```
 
-10. zsh plugins
+11. zsh plugins
 
 zsh-autocomplete
 
@@ -247,7 +226,7 @@ sudo chown -R root:root /usr/local/share/zsh/site-functions
 
 By performing these steps, you ensure that the files within the ``site-functions`` directory have secure permissions and are owned by the root user. This should resolve the insecure files issue and eliminate the ``zsh compinit: insecure files`` error. 
 
-11. Powerlevel10k
+12. Powerlevel10k
 
 ```
 cd /opt
@@ -256,14 +235,14 @@ mv /opt/ArcticTones/p10k.zsh ~/.p10k.zsh
 sudo ln -sf ~/.p10k.zsh /root/.p10k.zsh
 ```
 
-12. Rofi
+13. Rofi
 
 ```
 sudo apt install rofi
-mv /opt/ArcticTones/rofi ~/.config/rofi
+mv /opt/ArcticTones/rofi ~/.config
 ```
 
-13. Dunst
+14. Dunst
 
 ```
 sudo apt install dunst
@@ -271,7 +250,7 @@ mkdir -p ~/.config/dunst
 mv /opt/ArcticTones/dunstrc ~/.config/dunst
 ```
 
-14. NvChad
+15. NvChad
 
 Download the [latest stable release](https://github.com/neovim/neovim/releases/tag/stable) of __Neovim__ by visiting their GitHub repository. Look for the __nvim.appimage__ file and download it to your computer.
 
@@ -296,15 +275,22 @@ When prompted with the message "__Do you want to install example custom config?_
 
 To set the Nord theme in NvChad, follow these steps:
 
-1. Open __Neovim__ by typing vim in the terminal.
+1. Open __Neovim__ by typing __nvim__ in the terminal.
 
 2. Press <Space> and then th.
 
 3. Type nord and press Enter to apply the Nord theme.
 
-If you're interested, you can also explore and select from the available themes to further customize your __Neovim__ experience.
 
-15. Bat
+Similarly, repeat the above steps for the __root__ user.
+
+Optionally, we  can create a symbolic link to enable the use of the __nvim__ command via the __vim__ command.
+
+```
+sudo ln -sf /usr/bin/nvim /usr/bin/vim
+```
+
+16. Bat
 
 Download the [latest release](https://github.com/sharkdp/bat/releases) of __Bat__ by visiting their GitHub repository. Look for the appropriate __bat\_...\_amd64.deb__ file and download it to your computer.
 
@@ -315,7 +301,7 @@ mkdir -p ~/.config/bat
 echo '--theme="Nord"' > ~/.config/bat/config
 ```
 
-16. LSD
+17. LSD
 
 Download the [latest release](https://github.com/lsd-rs/lsd/releases) of __LSD__ by visiting their GitHub repository. Look for the appropriate __lsd\_...\_amd64.deb__ file and download it to your computer.
 
@@ -324,7 +310,7 @@ sudo dpkg -i lsd_..._amd64.deb
 rm lsd_..._amd64.deb
 ```
 
-17. fzf
+18. fzf
 
 For your __user account__:
 
@@ -341,12 +327,6 @@ sudo /root/.fzf/install
 ```
 
 Make sure to answer "__Yes__" to the prompts during the installation to enable __fuzzy auto-completion__, __key bindings__, and __update the shell configuration files__.
-
-18. ranger
-
-```
-sudo apt install ranger
-```
 
 19. glitchlock
 
@@ -365,6 +345,7 @@ Once __i3lock-color__ is installed, we can proceed with installing glitchlock. R
 ```
 sudo apt install scrot imagemagick 
 git clone https://github.com/xero/glitchlock
+mv /opt/ArcticTones/glitchlock /opt/glitchlock
 ```
 
 20. Autodestruction
@@ -373,29 +354,37 @@ git clone https://github.com/xero/glitchlock
 rm -rf /opt/ArcticTones
 ```
 
-21. Migrating to bspwm
+21. Required Dependencies
 
-Now it's time to migrate to __bspwm__. To do this, we first need to log out of our current session. You can log out manually from the menu or by using the following command in the terminal:
+Before migrating to bspwm, we will install the following dependencies to ensure the environment runs smoothly 
+
+```
+sudo apt install wmname
+sudo apt install xclip
+```
+
+22. Migrating to bspwm
+
+Finally we can  migrate to __bspwm__. To do this, we first need to log out of our current session. You can log out manually from the menu or by using the following command in the terminal:
 
 ```
 kill -9 -1
 ```
 
-Once you reach the login screen, you will notice a white dot representing the available desktop environments. Click on the white dot and select __bspwm__ from the list of available environments.
+Once you reach the login screen, you will notice a menu on the top right corner representing the available desktop environments. Click on that menu  and select __bspwm__ from the list of available environments.
 
 <p align="center">
   <img src="./assets/Migrating to bspwm.png">
 </p>
 
-After logging back in, don't panic if you see a black screen. This is expected behavior. In the [next section](https://github.com/MateoNitro550/ArcticTones#configuration-files), we will modify a configuration file to set up a wallpaper and customize the appearance of the desktop. 
+In the [next section](https://github.com/MateoNitro550/ArcticTones#configuration-files), we will tweak specific configuration files to customize the size and placement of various integrations.
 
 From this point onward, we will be using the sxhkd keybindings to interact with our bspwm environment. To learn more about the available keybindings and shortcuts, please refer to the [Usage and Shortcuts](https://github.com/MateoNitro550/ArcticTones#usage-and-shortcuts) section.
 
-
 ## Configuration Files
 
-Some text...
+...
 
 ## Usage and Shortcuts
 
-Some text...
+...

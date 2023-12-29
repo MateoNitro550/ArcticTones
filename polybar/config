@@ -453,39 +453,30 @@ type = custom/script
 exec = echo "%{F#ffffff}     %{u-}"
 click-left = ~/.config/rofi/modules/polybar/main/polybar.sh
 
-[module/xxxwindow]
-type = custom/script
-interval = 0
-exec = ~/.config/polybar/modules/xxxwindow/xxxwindow.sh
-
 [module/htb]
 type = custom/script
 interval = 3
 exec = ~/.config/polybar/modules/htb.sh
-click-left = /usr/sbin/ifconfig tun0 | grep "inet " | awk '{print $2}' | tr --delete '\n' | xclip -sel clip; notify-send -i /usr/share/icons/papirus/32x32/apps/baka-mplayer.svg "IP address copied to clipboard!"
-double-click-left = hackTheBox -o
-click-right = hackTheBox -e
+click-left = /usr/sbin/ifconfig tun0 | grep "inet " | awk '{print $2}' | tr --delete '\n' | xclip -sel clip; notify-send -i /usr/share/icons/Papirus/apps/beholder.svg "IP address copied to clipboard!"
 
 [module/target]
 type = custom/script
 interval = 3
 exec = ~/.config/polybar/modules/target/target.sh
-click-left = /usr/bin/cat ~/.config/polybar/modules/target/target | tr --delete '\n' | xclip -sel clip; notify-send -i /usr/share/icons/papirus/32x32/apps/baka-mplayer.svg "Target IP address copied to clipboard!"
-click-right = setTarget
+click-left = /usr/bin/cat ~/.config/polybar/modules/target/target | tr --delete '\n' | xclip -sel clip; notify-send -i /usr/share/icons/Papirus/apps/beholder.svg "Target IP address copied to clipboard!"
+click-right = echo "" > ~/.config/polybar/modules/target/target 
 
 [module/thm]
 type = custom/script
 interval = 3
 exec = ~/.config/polybar/modules/thm.sh
-click-left = /usr/sbin/ifconfig tuni | grep "inet " | awk '{print $2}' | tr --delete '\n' | xclip -sel clip; notify-send -i /usr/share/icons/papirus/32x32/apps/baka-mplayer.svg "IP address copied to clipboard!"
-double-click-left = tryHackMe -o
-click-right = tryHackMe -e
+click-left = /usr/sbin/ifconfig tuni | grep "inet " | awk '{print $2}' | tr --delete '\n' | xclip -sel clip; notify-send -i /usr/share/icons/Papirus/apps/beholder.svg "IP address copied to clipboard!"
 
 [module/ethernet]
 type = custom/script
 interval = 3
 exec = ~/.config/polybar/modules/ethernet.sh
-click-left = /usr/sbin/ifconfig ens33 | grep "inet " | awk '{print $2}' | tr --delete '\n' | xclip -sel clip; notify-send -i /usr/share/icons/papirus/32x32/apps/baka-mplayer.svg "IP address copied to clipboard!"
+click-left = /usr/sbin/ifconfig eth0 | grep "inet " | awk '{print $2}' | tr --delete '\n' | xclip -sel clip; notify-send -i /usr/share/icons/Papirus/apps/beholder.svg "IP address copied to clipboard!"
 
 [settings]
 screenchange-reload = true

@@ -3,7 +3,7 @@
 rofi_command="rofi -theme ~/.config/rofi/modules/polybar/main/themes/polybar.rasi"
 
 # Options
-network=" Network Options"
+network="󰖩 Network Options"
 lock=" Lock"
 settings=" Settings                     "
 powerSettings=" Power Settings               "
@@ -21,7 +21,7 @@ case $chosen in
       GLITCHICON=/opt/glitchlock/stop.png /opt/glitchlock/glitchlock
       ;;
     $settings)
-      mate-control-center
+      xfce4-settings-manager
       ;;
     $powerSettings)
       ~/.config/rofi/modules/polybar/powerOptions/powerOptions.sh

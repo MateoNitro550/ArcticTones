@@ -4,7 +4,7 @@ target=$(cat ~/.config/polybar/modules/target/target)
 
 if [ $target ]; then
 
-	echo "%{F#ffff8c00} %{F#ffffff}$target%{u-}"
+	echo "%{F#ffff8c00} %{F#ffffff}$target%{u-}"
 
 else
 
