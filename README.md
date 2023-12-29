@@ -9,7 +9,7 @@ ArcticTones is a minimalist Linux setup for Kali Linux. It features an arctic, n
 ## Table of Contents
 
 * [Dependencies](#dependencies)
-* [Installation Steps](#installation-steps-kali-linux---2023.4)
+* [Installation Steps](#installation-steps-kali-linux---20234)
 * [Configuration Files](#configuration-files)
 * [Usage and Shortcuts](#usage-and-shortcuts)
 
