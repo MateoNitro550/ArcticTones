@@ -1,5 +1,3 @@
-<h1 align="center">ArcticTones</h1>
-
 <p align="center">
   <img src="./assets/ArcticTones.png">
 </p>
