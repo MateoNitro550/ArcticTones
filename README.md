@@ -147,9 +147,9 @@ sudo mv Papirus/32x32/* .; sudo rm -r Papirus
 9. Polybar
 
 ```
+cd /opt
 sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
 sudo apt install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
-cd /opt
 git clone --recursive https://github.com/polybar/polybar
 cd polybar
 mkdir build
@@ -250,7 +250,7 @@ mv /opt/ArcticTones/dunstrc ~/.config/dunst
 
 Download the [latest stable release](https://github.com/neovim/neovim/releases/tag/stable) of __Neovim__ by visiting their GitHub repository. Look for the __nvim.appimage__ file and download it to your computer.
 
-Open the terminal and execute the following commands to rename the downloaded ``nvim.appimage`` file, set the appropriate permissions, and move it to the /usr/bin directory:
+Open the terminal and execute the following commands to rename the downloaded __nvim.appimage__ file, set the appropriate permissions, and move it to the ``/usr/bin`` directory:
 
 ```
 mv nvim.appimage nvim
@@ -259,7 +259,7 @@ sudo chown root:root nvim
 sudo mv nvim /usr/bin
 ```
 
-Once __Neovim__ is installed, you can proceed with installing __NvChad__. Execute the following commands in the terminal to remove any existing __Neovim__ configurations and clone the __NvChad__ repository:
+Once Neovim is installed, you can proceed with installing __NvChad__. Execute the following commands in the terminal to remove any existing Neovim configurations and clone the __NvChad__ repository:
 
 ```
 rm -rf ~/.config/nvim
@@ -267,20 +267,20 @@ rm -rf ~/.local/share/nvim
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 ```
 
-When prompted with the message "__Do you want to install example custom config?__", type "__y__" and press Enter to install the example custom config. Wait for the installation to complete, and then you can start using __NvChad__ with __Neovim__.
+When prompted with the message "__Do you want to install example custom config?__", type "__y__" and press ``Enter`` to install the example custom config. Wait for the installation to complete before you can start using NvChad with Neovim.
 
-To set the Nord theme in NvChad, follow these steps:
+To set the __Nord__ theme in NvChad, follow these steps:
 
-1. Open __Neovim__ by typing __nvim__ in the terminal.
+1. Open Neovim by typing __nvim__ in the terminal.
 
-2. Press <Space> and then th.
+2. Press ``Space`` and type th.
 
-3. Type nord and press Enter to apply the Nord theme.
+3. Type __nord__ and press ``Enter`` to apply the Nord theme.
 
 
 Similarly, repeat the above steps for the __root__ user.
 
-Optionally, we  can create a symbolic link to enable the use of the __nvim__ command via the __vim__ command.
+Optionally, we  can create a symbolic link to enable the use of the nvim command via the __vim__ command.
 
 ```
 sudo ln -sf /usr/bin/nvim /usr/bin/vim
@@ -322,7 +322,7 @@ sudo git clone --depth 1 https://github.com/junegunn/fzf.git /root/.fzf
 sudo /root/.fzf/install
 ```
 
-Make sure to answer "__Yes__" to the prompts during the installation to enable __fuzzy auto-completion__, __key bindings__, and __update the shell configuration files__.
+Make sure to answer "__Yes__" to all the prompts during the installation to enable __fuzzy auto-completion__, and __key bindings__.
 
 19. glitchlock
 
@@ -334,13 +334,13 @@ sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfont
 git clone https://github.com/Raymo111/i3lock-color.git
 cd i3lock-color
 ./install-i3lock-color.sh
+rm -rf ../i3lock-color
+```
+
+Once i3lock-color is installed, we can proceed with installing __glitchlock__. Run the following commands in the terminal:
+
+```
 cd /opt
-rm -rf i3lock-color
-```
-
-Once __i3lock-color__ is installed, we can proceed with installing glitchlock. Run the following commands in the terminal:
-
-```
 sudo apt install scrot imagemagick 
 git clone https://github.com/xero/glitchlock
 mv /opt/ArcticTones/glitchlock /opt/glitchlock
@@ -375,9 +375,9 @@ Once you reach the login screen, you will notice a menu on the top right corner 
   <img src="./assets/Migrating to bspwm.png">
 </p>
 
-In the [next section](https://github.com/MateoNitro550/ArcticTones#configuration-files), we will tweak specific configuration files to customize the size and placement of various integrations.
+Note that from this point onwards, we will use the sxhkd keybindings to interact with our bspwm environment. To learn more about the available keybindings and shortcuts, please refer to the [Usage and Shortcuts](https://github.com/MateoNitro550/ArcticTones#usage-and-shortcuts) section.
 
-From this point onward, we will be using the sxhkd keybindings to interact with our bspwm environment. To learn more about the available keybindings and shortcuts, please refer to the [Usage and Shortcuts](https://github.com/MateoNitro550/ArcticTones#usage-and-shortcuts) section.
+In the [next section](https://github.com/MateoNitro550/ArcticTones#configuration-files), we will modify specific configuration files to customize the size and location of various integrations.
 
 ## Configuration Files
 

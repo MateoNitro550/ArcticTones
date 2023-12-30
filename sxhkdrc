@@ -124,14 +124,6 @@ super + ctrl + {Left,Down,Up,Right}
 # custom
 #
 
-# Google-Chrome
-ctrl + shift + g
-	google-chrome
-
-# Google-Chrome --incognito
-ctrl + shift + n
-  google-chrome --incognito
-
 # Lockscreen
 super + alt + ctrl + x
   GLITCHICON=/opt/glitchlock/stop.png /opt/glitchlock/glitchlock
