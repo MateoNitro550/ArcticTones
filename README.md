@@ -103,7 +103,7 @@ mv /opt/ArcticTones/octopus.png ~/Pictures
 5. kitty
 
 ```
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+sudo apt install kitty
 mv /opt/ArcticTones/kitty ~/.config
 ```
 
