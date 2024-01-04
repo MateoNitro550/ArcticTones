@@ -2,13 +2,13 @@
 
 dunst &
 
+picom &
+
 wmname LG3D &
 
 vmware-user-suid-wrapper &
 
 ~/.config/polybar/launch.sh &
-
-picom --experimental-backends &
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
